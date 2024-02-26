@@ -1,14 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
- 
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-<link rel="stylesheet" href="../public/stylesheets/chat.css">
+  <link href="/stylesheets/chat.css" type="text/css" rel="stylesheet">
+</head>
 
 <body>
-
   <div class="container clearfix">
     <div class="people-list" id="people-list">
       <div class="search">
@@ -23,12 +26,15 @@
 
     <div class="chat">
       <div class="chat-header clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
+        <img style="border-radius: 50px;" src="{{img}}" alt="avatar" />
 
         <div class="chat-about">
           <div id="profile-ID" class="chat-with"></div>
         </div>
-        <i class="fa fa-star"></i>
+        <a style="margin-left: 50px; color: red font-size: medium;
+    font-weight: 600;
+    
+" href="/logout"><strong>Logout</strong></a>
       </div> <!-- end chat-header -->
 
       <div class="chat-history">
@@ -150,7 +156,7 @@
 
     socket.on('online-person', function (person) {
 
-      {{!-- console.log(person) --}}
+
 
       document.getElementById('new-person').innerHTML = ""
 
@@ -185,3 +191,5 @@
     })
   </script>
 </body>
+
+</html>

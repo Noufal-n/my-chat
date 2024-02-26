@@ -239,3 +239,6 @@ body {
   clear: both;
   height: 0;
 }
+a, u {
+  text-decoration: none;
+}
