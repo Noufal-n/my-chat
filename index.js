@@ -1,12 +1,15 @@
 const express = require('express')
+const session = require('express-session')
+const passport = require('passport')
 const path = require('path')
 const app = express()
-const passport = require('passport')
+require('./google-authintication/Oauth')
+
 const http = require('http')
 const server = http.createServer(app)
 const { Server } = require("socket.io")
 const io = new Server(server)
-require('./google-authintication/Oauth')
+app.use(session({ secret: 'cats' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
